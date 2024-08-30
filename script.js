@@ -13,11 +13,16 @@ function createGrid(squaresPerSide) {
         square.style.height = `${squareSize}px`;
 
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = 'pink';
+            const randomPastelColor = `rgb(${randomPastelValue()}, ${randomPastelValue()}, ${randomPastelValue()})`;
+            square.style.backgroundColor = randomPastelColor;
         });
 
         container.appendChild(square);
     }
+}
+
+function randomPastelValue() {
+    return Math.floor(Math.random() * 128) + 127;
 }
 
 resetButton.addEventListener('click', () => {
